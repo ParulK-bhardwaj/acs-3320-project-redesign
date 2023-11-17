@@ -13,7 +13,10 @@ Before updating the design, let's have a look at how the webpage looked like in 
 <img width="1876" alt="image" src="https://github.com/ParulK-bhardwaj/acs-3320-project-redesign/assets/111934039/fbffcece-d3f5-4b18-8d48-00a10e25d9b6">
 <img width="1874" alt="image" src="https://github.com/ParulK-bhardwaj/acs-3320-project-redesign/assets/111934039/800210f1-7ebf-452c-81ae-1e58aeaafa81">
 
-## Redesign Highlights
+
+After the Redesign:
+![127 0 0 1_5500_Index html (2)](https://github.com/ParulK-bhardwaj/acs-3320-project-redesign/assets/111934039/ea6a9281-bb34-4313-8b76-3d93357bcc4d)
+
 
 ### Typography Enhancement
 - Implemented a custom font family for a unique and consistent text style.

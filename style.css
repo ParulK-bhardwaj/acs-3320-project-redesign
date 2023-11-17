@@ -1,0 +1,493 @@
+/* ----- myportfolio.css -----*/
+/* Inspired by TamalSen webpage */
+/* Setting the height 100% to the body and html to fill the full height of window vertically. */
+
+body, html{
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* used a custom font from Google "Hind", set san-serif as a second font if "Hind" is not available */
+body {
+   font-family: "Hind", sans-serif; 
+   font-size: 18px;
+   font-weight: 100;
+   line-height: 1.75;
+   background-color:  black;
+   color: white;
+   padding-top: 60px;
+
+}
+
+header {
+    /* background: url('https://cdn.pixabay.com/photo/2016/03/26/05/15/fractal-1280079_1280.jpg') */
+    background: url('https://i0.wp.com/opencurve.info/wp-content/uploads/2020/05/quantum-entanglement.jpeg?w=1920&ssl=1') no-repeat center center / cover;
+    height: 100vh;
+    color: white;
+    overflow: hidden; /* Ensures the gradient overlay covers the entire image */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(1, 9, 30, 0.409), rgba(11, 5, 62, 0.154));
+    z-index: 1; /* Ensures the overlay is above the image */
+}
+
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.957);
+    z-index: 1000; /* this makes sure it's above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.logo {
+    margin-left: 0;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: rgb(13, 215, 215); 
+}
+
+.logo::after {
+    content: "._";
+    color: magenta;
+    font-size: 1.5em;
+}
+
+.logo a:hover {
+    color: #ddd;
+}
+
+.nav-links {
+    margin-right: 20%;
+    display: flex; 
+    margin-left: auto;
+    font-size: 1em;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+    padding: 30px 15px;
+    position: relative; /* For absolute positioning of nav-number */
+    display: inline-block; /* For proper spacing and positioning */
+}
+
+
+.nav-links a:focus,
+.nav-links a:hover {
+    color: rgb(13, 215, 215);
+}
+
+.nav-number {
+    position: absolute;
+    top: 15px;
+    right: 10%;
+    transform: translateX(-50%); /* Center the number above the link */
+    color: white;
+    font-size: 0.65em;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    margin-right: 10%;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%; 
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(86, 101, 212, 0.921);
+        width: 50%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: right 0.3s;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-family: "Hind", sans-serif;
+}
+
+.hero h1 {
+    text-align: center;
+    font-size: 4em;
+    font-weight: Bold;
+    margin-top: 10%;
+}
+
+.hero p {
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.animated-dot {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 187, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px yellow;
+    animation: moveDot 50s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+@keyframes moveDot {
+    0%, 100% {
+        right: 20%;
+    }
+    50% {
+        right: 80%;
+    }
+}
+
+.arrow-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 60px;
+    background: rgba(251, 251, 250, 0.052); 
+    border-radius: 25px / 30px;
+    display: flex;
+    border: teal 1px solid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: pulseAnimation 2s ease-in infinite;
+    display: flex;
+    text-decoration: none;
+}
+
+.down-arrow {
+    border: solid #e9f696fd;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(45deg); 
+    animation: bounceArrow 2s ease-in-out infinite;
+}
+
+/* Pulse animation for the oval container */
+@keyframes pulseAnimation {
+    0% { box-shadow: 0 0 0 0 rgba(16, 2, 2, 0.2); }
+    70% { box-shadow: 0 0 0 1px rgba(224, 215, 212, 0.731); }
+    100% { box-shadow: 0 0 0 0 rgba(206, 196, 196, 0.847); }
+}
+
+/* bounce animation for the arrow */
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(45deg);
+    }
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 45px;
+    color: white;
+    margin: 0.5em 0;
+    text-align: center;
+    text-transform: capitalize;
+    
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em 0; 
+    font-family: 'Hind', sans-serif; 
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 1em;
+    }
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin: 0;
+    padding: 0 2em;
+    line-height: 1.8;
+    font-weight: light;
+}
+
+#skills {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: white;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.skill-one,
+.skill-two {
+    border-radius: 5px;
+    padding: 20px;
+    flex-basis: calc(50% - 60px);
+    box-sizing: border-box; 
+    border: 1px solid white;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-box-icon svg {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.icon-box-headline {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-box-title {
+    font-family: 'Hind', sans-serif; 
+    font-size: 1.25em;
+    font-weight: bold; 
+}
+
+.chonky-underline-megenta,
+.chonky-underline-blue {
+    text-decoration: underline;
+    text-decoration-thickness: 5px; 
+    text-decoration-color: var(--underline-color); 
+}
+
+.chonky-underline-megenta {
+    --underline-color: #ff00ff;
+}
+
+.chonky-underline-blue {
+    --underline-color: #0000ff;
+}
+
+@media (max-width: 768px) {
+    #skills {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skill-one,
+    .skill-two {
+        width: 100%;
+        flex-basis: auto;
+    }
+}
+
+#experience {
+    color: white;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+#experience h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.job {
+    margin-bottom: 15px;
+    padding: 20px; 
+}
+
+.job-header {
+    background-color: #6124b0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0.4em;
+}
+
+.job-header h3 {
+    margin: 10px;
+    font-size: 1em;
+}
+
+.job-duration {
+    font-weight: bold;
+}
+
+.job-toggle {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.job-detail {
+    display: none;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #2f2f59bc;
+    border-radius: 0.4em;
+}
+
+.languages {
+    padding: 10px 0;
+}
+
+.languages span {
+    background-color: #3035ca;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 10px;
+    font-size: 0.85em;
+}
+
+.tech-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab {
+    background: transparent; 
+    color: white;
+    border: 2px solid white; 
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px; 
+}
+
+.tab:hover,
+.tab.active { 
+    background-color: #d60ef0;
+}
+
+.project-display {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project-content {
+    display: none; 
+    border-radius: 20px;
+}
+
+.project-content img {
+    width: 40%; 
+    height: 100%; 
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(241, 235, 235, 0.558);
+}
+
+@media (max-width: 768px) {
+    .tech-section {
+        flex-direction: column;
+    }
+
+    .tech-tabs {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    display: inline-block;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: #1a1a2e;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-icon:hover {
+    background-color: #4566e9;
+    color: white;
+}
+
+.contact-icon i {
+    vertical-align: middle;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
