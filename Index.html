@@ -115,13 +115,13 @@
                         <div class="languages">
                             <span>Ruby</span>
                             <span>React</span>
-                            <span>Sorbet</span>
-                            <span>Python</span>
+                            <span>Javascript</span>
+                            <span>Typescript</span>
                         </div>
                     </div>
                 </div>
             </section>
-              <section class="project-container">
+              <section class="project-container" id="projects">
                 <h2>My Projects</h2>
                 <nav class="tech-tabs">
                     <button class="tab" onclick="showProject('react')">React</button>
@@ -141,7 +141,7 @@
                     </article>
                     <article id="data-vis" class="project-content">
                         <a href="vis-project-url"><img src="https://user-images.githubusercontent.com/111934039/253136377-3bcb72b4-aeae-4291-83b9-40eb4bff1336.png" alt="Data Visualization Image"/></a>
-                        <a href="vis-project-url">   <img src="https://user-images.githubusercontent.com/111934039/245654730-ae06b20b-038e-4bb9-bfa8-c6aa54d03150.png" alt="StarryNight Audio Vis" /></a>
+                        <a href="vis-project-url"><img src="https://user-images.githubusercontent.com/111934039/245654730-ae06b20b-038e-4bb9-bfa8-c6aa54d03150.png" alt="StarryNight Audio Vis" /></a>
                     </article>
                 </section>
             </section>
@@ -150,17 +150,19 @@
                     <h2>Let's Connect!</h2>
                     <ul>
                         <li>
-                            <a href="mailto:parul.bhardwaj@example.com" class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </a>
+                            <address>
+                                <a href="mailto:parul.bhardwaj@example.com" class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </address>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/profile" target="_blank" class="contact-icon">
+                            <a href="https://www.linkedin.com/in/parulbhardwajca" target="_blank" class="contact-icon">
                                 <i class="fab fa-linkedin-in"></i> 
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/" target="_blank" class="contact-icon">
+                            <a href="https://github.com/ParulK-bhardwaj" target="_blank" class="contact-icon">
                                 <i class="fab fa-github"></i> 
                             </a>
                         </li>
@@ -172,7 +174,6 @@
     <script>
         function toggleNav() {
             let navLinks = document.getElementById("navLinks");
-            // Check if navLinks exists to avoid null reference error
             if (navLinks) {
                 if (navLinks.style.right === "0px") {
                     navLinks.style.right = "-100%";
@@ -181,7 +182,7 @@
                 }
             }
         }
-        
+
         function closeNav() {
             let navLinks = document.getElementById("navLinks");
             if (navLinks) {
